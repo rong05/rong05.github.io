@@ -97,14 +97,14 @@
 
 
   <meta name="description" content="LruCache实际上是模仿android的LruCache来实现的，但因为android的LruCache是通过synchronized和LinkHashMap实现的。而我自定义的是双向链表、HashMap和ReadWriteLock来实现。  链表：插入到合适位置 HashMap：直接通过key获取节点 ReadWriteLock：当增加、移动、删除的时候用写锁，而查阅的时候用读锁。  双向链">
-<meta name="keywords" content="java,多线程,链表,android">
+<meta name="keywords" content="java,android,多线程,链表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="通过双链表实现线程安全的LruCache">
 <meta property="og:url" content="https://rong05.github.io/2019/04/19/lruCache/index.html">
 <meta property="og:site_name" content="三余无梦生">
 <meta property="og:description" content="LruCache实际上是模仿android的LruCache来实现的，但因为android的LruCache是通过synchronized和LinkHashMap实现的。而我自定义的是双向链表、HashMap和ReadWriteLock来实现。  链表：插入到合适位置 HashMap：直接通过key获取节点 ReadWriteLock：当增加、移动、删除的时候用写锁，而查阅的时候用读锁。  双向链">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-19T18:49:46.138Z">
+<meta property="og:updated_time" content="2019-04-19T19:04:26.642Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过双链表实现线程安全的LruCache">
 <meta name="twitter:description" content="LruCache实际上是模仿android的LruCache来实现的，但因为android的LruCache是通过synchronized和LinkHashMap实现的。而我自定义的是双向链表、HashMap和ReadWriteLock来实现。  链表：插入到合适位置 HashMap：直接通过key获取节点 ReadWriteLock：当增加、移动、删除的时候用写锁，而查阅的时候用读锁。  双向链">
@@ -387,7 +387,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-20 02:49:46" itemprop="dateModified" datetime="2019-04-20T02:49:46+08:00">2019-04-20</time>
+                <time title="修改时间：2019-04-20 03:04:26" itemprop="dateModified" datetime="2019-04-20T03:04:26+08:00">2019-04-20</time>
               
             
           </span>
@@ -545,47 +545,46 @@ private Entry&lt;K, V&gt; tail;//链表的尾部
 <li>
 <p><strong>锁降级</strong><br>
 重入允许从写入锁降级为读取锁，其实现方式是：先获取写入锁，然后获取读取锁，最后释放写入锁。但是，从读取锁升级到写入锁是<strong>不可能的</strong>。就拿LruCache的检测函数作为示例代码，如下</p>
-<p>public void trimToSize(int maxSize) {<br>
-while (true) {<br>
-K key;<br>
-V value;<br>
-rwLock.readLock().lock();<br>
-if (size &lt; 0 || (map.isEmpty() &amp;&amp; size != 0)) {<br>
-rwLock.readLock().unlock();<br>
-throw new IllegalStateException(getClass().getName()<br>
-+ “.sizeOf() is reporting inconsistent results!”);<br>
-}</p>
-<pre><code>      if (size &lt;= maxSize) {//检查是否超过最大缓存数
-          rwLock.readLock().unlock();
-          break;
-      }
-      Entry&lt;K, V&gt; toEvict = head;//取出头部
-      if (toEvict == null) {
-          rwLock.readLock().unlock();
-          break;
-      }
-
-      key = toEvict.getKey();
-      value = toEvict.getValue();
-      Entry&lt;K, V&gt; previous;
-      rwLock.readLock().unlock();//读取锁不可能升级成写入锁
-      rwLock.writeLock().lock();
-      try {
-          previous = map.remove(key);
-          if (previous != null) {
-              afterNodeRemoval(previous);//删除节点
-              size -= safeSizeOf(key, value);
-              evictionCount++;
-          }
-      } finally {
-          rwLock.readLock().lock();//写入锁可以降级为读取锁
-          rwLock.writeLock().unlock();
-      }
-      rwLock.readLock().unlock();
-      entryRemoved(true, key, value, null);
-  }
+<pre><code>public void trimToSize(int maxSize) {
+  	while (true) {
+      	K key;
+      	V value;
+      	rwLock.readLock().lock();
+      	if (size &lt; 0 || (map.isEmpty() &amp;&amp; size != 0)) {
+          	rwLock.readLock().unlock();
+          	throw new IllegalStateException(getClass().getName()
+                  	+ &quot;.sizeOf() is reporting inconsistent results!&quot;);
+      	}
+      	if (size &lt;= maxSize) {//检查是否超过最大缓存数
+          	rwLock.readLock().unlock();
+          	break;
+      	}
+      	Entry&lt;K, V&gt; toEvict = head;//取出头部
+      	if (toEvict == null) {
+          	rwLock.readLock().unlock();
+          	break;
+      	}
+      	key = toEvict.getKey();
+      	value = toEvict.getValue();
+      	Entry&lt;K, V&gt; previous;
+      	rwLock.readLock().unlock();//读取锁不可能升级成写入锁
+      	rwLock.writeLock().lock();
+      	try {
+          	previous = map.remove(key);
+          	if (previous != null) {
+              	afterNodeRemoval(previous);//删除节点
+              	size -= safeSizeOf(key, value);
+              	evictionCount++;
+          	}
+      	} finally {
+          	rwLock.readLock().lock();//写入锁可以降级为读取锁
+          	rwLock.writeLock().unlock();
+      	}
+      	rwLock.readLock().unlock();
+      	entryRemoved(true, key, value, null);
+  	}
+}
 </code></pre>
-<p>}</p>
 </li>
 </ul>
 <h1><span id="总结">总结</span></h1>
@@ -625,11 +624,11 @@ throw new IllegalStateException(getClass().getName()<br>
           
             <a href="/tags/java/" rel="tag"># java</a>
           
+            <a href="/tags/android/" rel="tag"># android</a>
+          
             <a href="/tags/多线程/" rel="tag"># 多线程</a>
           
             <a href="/tags/链表/" rel="tag"># 链表</a>
-          
-            <a href="/tags/android/" rel="tag"># android</a>
           
         </div>
       
@@ -735,8 +734,6 @@ throw new IllegalStateException(getClass().getName()<br>
                     
                   
                     
-                    
-                      
                     
                       
                     
