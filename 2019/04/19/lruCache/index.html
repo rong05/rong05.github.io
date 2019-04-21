@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="三余无梦生">
 <meta property="og:description" content="LruCache实际上是模仿android的LruCache来实现的，但因为android的LruCache是通过synchronized和LinkHashMap实现的。而我自定义的LruCache是双向链表、HashMap和ReadWriteLock来实现。  链表：插入到合适位置 HashMap：直接通过key获取节点 ReadWriteLock：当增加、移动、删除的时候用写锁，而查阅的时候用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-19T19:12:19.250Z">
+<meta property="og:updated_time" content="2019-04-21T15:10:31.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过双链表实现线程安全的LruCache">
 <meta name="twitter:description" content="LruCache实际上是模仿android的LruCache来实现的，但因为android的LruCache是通过synchronized和LinkHashMap实现的。而我自定义的LruCache是双向链表、HashMap和ReadWriteLock来实现。  链表：插入到合适位置 HashMap：直接通过key获取节点 ReadWriteLock：当增加、移动、删除的时候用写锁，而查阅的时候用">
@@ -387,7 +387,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-20 03:12:19" itemprop="dateModified" datetime="2019-04-20T03:12:19+08:00">2019-04-20</time>
+                <time title="修改时间：2019-04-21 23:10:31" itemprop="dateModified" datetime="2019-04-21T23:10:31+08:00">2019-04-21</time>
               
             
           </span>
@@ -448,154 +448,27 @@
 <h1><span id="双向链表">双向链表</span></h1>
 <p>模仿LinkHashMap的双向链表实现方式来实现LruCache的双向链表。<br>
 其中元素的实现类如下:</p>
-<pre><code>private static class Entry&lt;K, V&gt; {
-    Entry&lt;K, V&gt; before;//上一个节点
-    Entry&lt;K, V&gt; after;//下一个节点
-    final V value;//保存的内容
-    final K key;//键
-    Entry(K key, V value) {
-        this.key = key;
-        this.value = value;
-    }
-    public V getValue() {
-        return value;
-    }
-    public K getKey() {
-        return key;
-    }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Entry)) return false;
-        Entry&lt;?, ?&gt; entry = (Entry&lt;?, ?&gt;) o;
-        return getKey().equals(entry.getKey());
-    }
-    @Override
-    public int hashCode() {
-        return Objects.hash(getKey());
-    }
-}
-</code></pre>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">private static class Entry&lt;K, V&gt; &#123;</span><br><span class="line">    Entry&lt;K, V&gt; before;//上一个节点</span><br><span class="line">    Entry&lt;K, V&gt; after;//下一个节点</span><br><span class="line">    final V value;//保存的内容</span><br><span class="line">    final K key;//键</span><br><span class="line">    Entry(K key, V value) &#123;</span><br><span class="line">        this.key = key;</span><br><span class="line">        this.value = value;</span><br><span class="line">    &#125;</span><br><span class="line">    public V getValue() &#123;</span><br><span class="line">        return value;</span><br><span class="line">    &#125;</span><br><span class="line">    public K getKey() &#123;</span><br><span class="line">        return key;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public boolean equals(Object o) &#123;</span><br><span class="line">        if (this == o) return true;</span><br><span class="line">        if (!(o instanceof Entry)) return false;</span><br><span class="line">        Entry&lt;?, ?&gt; entry = (Entry&lt;?, ?&gt;) o;</span><br><span class="line">        return getKey().equals(entry.getKey());</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public int hashCode() &#123;</span><br><span class="line">        return Objects.hash(getKey());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>双向链表的实现：</p>
 <pre><code>private Entry&lt;K, V&gt; head;//链表的头部
 private Entry&lt;K, V&gt; tail;//链表的尾部
 </code></pre>
 <p>有新的节点都是从尾部开始添加，在首次插入节点时，将头尾都指向p<code>（head = last = p）</code>，实现代码如下：</p>
-<pre><code>private void linkNodeLast(Entry&lt;K, V&gt; p) {
-    // 添加元素之前双向链表尾部节点
-    Entry&lt;K, V&gt; last = tail;
-    // tail 指向新添加的节点
-    tail = p;
-    //如果之前 tail 指向 null 那么集合为空新添加的节点 head = tail = p
-    if (last == null)
-        head = p;
-    else {
-        // 否则将新节点的 before 引用指向之前当前链表尾部
-        p.before = last;
-        // 当前链表尾部节点的 after 指向新节点
-        last.after = p;
-    }
-}
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">private void linkNodeLast(Entry&lt;K, V&gt; p) &#123;</span><br><span class="line">    // 添加元素之前双向链表尾部节点</span><br><span class="line">    Entry&lt;K, V&gt; last = tail;</span><br><span class="line">    // tail 指向新添加的节点</span><br><span class="line">    tail = p;</span><br><span class="line">    //如果之前 tail 指向 null 那么集合为空新添加的节点 head = tail = p</span><br><span class="line">    if (last == null)</span><br><span class="line">        head = p;</span><br><span class="line">    else &#123;</span><br><span class="line">        // 否则将新节点的 before 引用指向之前当前链表尾部</span><br><span class="line">        p.before = last;</span><br><span class="line">        // 当前链表尾部节点的 after 指向新节点</span><br><span class="line">        last.after = p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>删除节点时，实现代码如下：</p>
-<pre><code>private void afterNodeRemoval(Entry&lt;K, V&gt; e) {
-    Entry&lt;K, V&gt; p = e, b = p.before, a = p.after;
-    // 将 p 节点的前后指针引用置为 null 便于内存释放
-    p.before = p.after = null;
-    // p.before 为 null，表明 p 是头节点
-    if (b == null)
-        head = a;
-    else//否则将 p 的前驱节点连接到 p 的后驱节点
-        b.after = a;
-    // a 为 null，表明 p 是尾节点
-    if (a == null)
-        tail = b;
-    else //否则将 a 的前驱节点连接到 b
-        a.before = b;
-}
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">private void afterNodeRemoval(Entry&lt;K, V&gt; e) &#123;</span><br><span class="line">    Entry&lt;K, V&gt; p = e, b = p.before, a = p.after;</span><br><span class="line">    // 将 p 节点的前后指针引用置为 null 便于内存释放</span><br><span class="line">    p.before = p.after = null;</span><br><span class="line">    // p.before 为 null，表明 p 是头节点</span><br><span class="line">    if (b == null)</span><br><span class="line">        head = a;</span><br><span class="line">    else//否则将 p 的前驱节点连接到 p 的后驱节点</span><br><span class="line">        b.after = a;</span><br><span class="line">    // a 为 null，表明 p 是尾节点</span><br><span class="line">    if (a == null)</span><br><span class="line">        tail = b;</span><br><span class="line">    else //否则将 a 的前驱节点连接到 b</span><br><span class="line">        a.before = b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>被访问的节点都会移动到链表最后</p>
-<pre><code>private void afterNodeAccess(Entry&lt;K, V&gt; e) { 
-    // move node to last
-    Entry&lt;K, V&gt; last;
-    if ((last = tail) != e) {
-        Entry&lt;K, V&gt; p = e, b = p.before, a = p.after;
-        //访问节点的后驱置为 null
-        p.after = null;
-        //如访问节点的前驱为 null 则说明 p = head
-        if (b == null)
-            head = a;
-        else
-            b.after = a;
-        //如果 p 不为尾节点 那么将 a 的前驱设置为 b
-        if (a != null)
-            a.before = b;
-        else
-            last = b;
-
-        if (last == null)
-            head = p;
-        else {
-            p.before = last;
-            last.after = p;
-        }
-        tail = p;// 将 p 接在双向链表的最后
-    }
-}
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">private void afterNodeAccess(Entry&lt;K, V&gt; e) &#123; </span><br><span class="line">    // move node to last</span><br><span class="line">    Entry&lt;K, V&gt; last;</span><br><span class="line">    if ((last = tail) != e) &#123;</span><br><span class="line">        Entry&lt;K, V&gt; p = e, b = p.before, a = p.after;</span><br><span class="line">        //访问节点的后驱置为 null</span><br><span class="line">        p.after = null;</span><br><span class="line">        //如访问节点的前驱为 null 则说明 p = head</span><br><span class="line">        if (b == null)</span><br><span class="line">            head = a;</span><br><span class="line">        else</span><br><span class="line">            b.after = a;</span><br><span class="line">        //如果 p 不为尾节点 那么将 a 的前驱设置为 b</span><br><span class="line">        if (a != null)</span><br><span class="line">            a.before = b;</span><br><span class="line">        else</span><br><span class="line">            last = b;</span><br><span class="line"></span><br><span class="line">        if (last == null)</span><br><span class="line">            head = p;</span><br><span class="line">        else &#123;</span><br><span class="line">            p.before = last;</span><br><span class="line">            last.after = p;</span><br><span class="line">        &#125;</span><br><span class="line">        tail = p;// 将 p 接在双向链表的最后</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这些就是双向链表的基础实现</p>
 <h1><span id="读写锁readwritelock">读写锁（ReadWriteLock）</span></h1>
 <p>可以多个线程同时获取读取锁，只有一个线程能获取写入锁，而且在进行写操作时，其他线程都不能进行读和写的操作。</p>
 <ul>
-<li>
-<p><strong>可重入锁</strong><br>
-允许writer和reader获取重新获取读取锁和写入锁。writer可以获取读取锁，但反过来不成立。</p>
-</li>
-<li>
-<p><strong>锁降级</strong><br>
-重入允许从写入锁降级为读取锁，其实现方式是：先获取写入锁，然后获取读取锁，最后释放写入锁。但是，从读取锁升级到写入锁是<strong>不可能的</strong>。就拿LruCache的检测函数作为示例代码，如下</p>
-<pre><code>public void trimToSize(int maxSize) {
-  	while (true) {
-      	K key;
-      	V value;
-      	rwLock.readLock().lock();
-      	if (size &lt; 0 || (map.isEmpty() &amp;&amp; size != 0)) {
-          	rwLock.readLock().unlock();
-          	throw new IllegalStateException(getClass().getName()
-                  	+ &quot;.sizeOf() is reporting inconsistent results!&quot;);
-      	}
-      	if (size &lt;= maxSize) {//检查是否超过最大缓存数
-          	rwLock.readLock().unlock();
-          	break;
-      	}
-      	Entry&lt;K, V&gt; toEvict = head;//取出头部
-      	if (toEvict == null) {
-          	rwLock.readLock().unlock();
-          	break;
-      	}
-      	key = toEvict.getKey();
-      	value = toEvict.getValue();
-      	Entry&lt;K, V&gt; previous;
-      	rwLock.readLock().unlock();//读取锁不可能升级成写入锁
-      	rwLock.writeLock().lock();
-      	try {
-          	previous = map.remove(key);
-          	if (previous != null) {
-              	afterNodeRemoval(previous);//删除节点
-              	size -= safeSizeOf(key, value);
-              	evictionCount++;
-          	}
-      	} finally {
-          	rwLock.readLock().lock();//写入锁可以降级为读取锁
-          	rwLock.writeLock().unlock();
-      	}
-      	rwLock.readLock().unlock();
-      	entryRemoved(true, key, value, null);
-  	}
-}
-</code></pre>
-</li>
+<li><strong>可重入锁</strong><br>
+允许writer和reader获取重新获取读取锁和写入锁。writer可以获取读取锁，但反过来不成立。</li>
+<li><strong>锁降级</strong><br>
+重入允许从写入锁降级为读取锁，其实现方式是：先获取写入锁，然后获取读取锁，最后释放写入锁。但是，从读取锁升级到写入锁是<strong>不可能的</strong>。就拿LruCache的检测函数作为示例代码，如下</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">public void trimToSize(int maxSize) &#123;</span><br><span class="line">   	while (true) &#123;</span><br><span class="line">       	K key;</span><br><span class="line">       	V value;</span><br><span class="line">       	rwLock.readLock().lock();</span><br><span class="line">       	if (size &lt; 0 || (map.isEmpty() &amp;&amp; size != 0)) &#123;</span><br><span class="line">           	rwLock.readLock().unlock();</span><br><span class="line">           	throw new IllegalStateException(getClass().getName()</span><br><span class="line">                   	+ &quot;.sizeOf() is reporting inconsistent results!&quot;);</span><br><span class="line">       	&#125;</span><br><span class="line">       	if (size &lt;= maxSize) &#123;//检查是否超过最大缓存数</span><br><span class="line">           	rwLock.readLock().unlock();</span><br><span class="line">           	break;</span><br><span class="line">       	&#125;</span><br><span class="line">       	Entry&lt;K, V&gt; toEvict = head;//取出头部</span><br><span class="line">       	if (toEvict == null) &#123;</span><br><span class="line">           	rwLock.readLock().unlock();</span><br><span class="line">           	break;</span><br><span class="line">       	&#125;</span><br><span class="line">       	key = toEvict.getKey();</span><br><span class="line">       	value = toEvict.getValue();</span><br><span class="line">       	Entry&lt;K, V&gt; previous;</span><br><span class="line">       	rwLock.readLock().unlock();//读取锁不可能升级成写入锁</span><br><span class="line">       	rwLock.writeLock().lock();</span><br><span class="line">       	try &#123;</span><br><span class="line">           	previous = map.remove(key);</span><br><span class="line">           	if (previous != null) &#123;</span><br><span class="line">               	afterNodeRemoval(previous);//删除节点</span><br><span class="line">               	size -= safeSizeOf(key, value);</span><br><span class="line">               	evictionCount++;</span><br><span class="line">           	&#125;</span><br><span class="line">       	&#125; finally &#123;</span><br><span class="line">           	rwLock.readLock().lock();//写入锁可以降级为读取锁</span><br><span class="line">           	rwLock.writeLock().unlock();</span><br><span class="line">       	&#125;</span><br><span class="line">       	rwLock.readLock().unlock();</span><br><span class="line">       	entryRemoved(true, key, value, null);</span><br><span class="line">   	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1><span id="总结">总结</span></h1>
 <p>参照android的LruCache实现的自定义LrcCache基本实现原理就是用</p>
 <ul>
