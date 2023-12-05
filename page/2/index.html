@@ -1,358 +1,496 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
 
-<head>
-	<meta name="generator" content="Hugo 0.120.4"><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>LEAN</title>
+    <meta name="generator" content="Hugo 0.120.4"><meta name="theme-color" content="#fff" />
+    <meta name="color-scheme" content="light dark">
 
-<meta name="description" content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod">
-<meta name="author" content="Theme PaperMod">
-<link rel="canonical" href="https://rong05.github.io/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.0c4fd3725171366f335155acde6fb3c7b7042cd2fd075bebf5023d9b28a701b2.css" integrity="sha256-DE/TclFxNm8zUVWs3m&#43;zx7cELNL9B1vr9QI9myinAbI=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://rong05.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://rong05.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://rong05.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://rong05.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://rong05.github.io/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://rong05.github.io/index.xml">
-<link rel="alternate" type="application/json" href="https://rong05.github.io/index.json">
-<link rel="alternate" hreflang="en" href="https://rong05.github.io/">
-<link rel="alternate" hreflang="fr" href="https://rong05.github.io/fr/">
-<link rel="alternate" hreflang="fa" href="https://rong05.github.io/fa/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
+    <title>Hugo 主题 MemE</title>
 
-            .list {
-                background: var(--theme);
-            }
+    <link rel="stylesheet" href="/css/meme.min.5527d02073dfaacd1f5939643079a5eb7534305bd6d96b622afe1782aa234ff1.css"/>
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
+    
+    
+        
+            <script src="/js/meme.min.e46abe484398824efc70edec3126437916974df592d7c395b44f8f60e0f57e9d.js"></script>
 
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
+        
+    
 
-    </style>
-</noscript><meta property="og:title" content="LEAN" />
-<meta property="og:description" content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://rong05.github.io/" /><meta property="og:image" content="https://rong05.github.io/papermod-cover.png"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://rong05.github.io/papermod-cover.png"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
 
-<meta name="twitter:title" content="LEAN"/>
-<meta name="twitter:description" content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"/>
+    <meta name="author" content="reuixiy" /><meta name="description" content="MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Hugo 主题 MemE" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Hugo 主题 MemE" />
+    <meta name="msapplication-starturl" content="" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    <link rel="alternate" type="application/atom&#43;xml" href="https://example.com/atom.xml" title="Hugo 主题 MemE" />
+    <link rel="alternate" type="application/rss&#43;xml" href="https://example.com/rss.xml" title="Hugo 主题 MemE" />
+    
+
+    
+        <link rel="canonical" href="https://example.com/" />
+    
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "LEAN",
-  "url": "https://rong05.github.io/",
-  "description": "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod",
-  "thumbnailUrl": "https://rong05.github.io/favicon.ico",
-  "sameAs": [
-      "https://github.com/adityatelange/hugo-PaperMod", "https://ko-fi.com/adityatelange", "index.xml"
-  ]
-}
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "datePublished": "1969-07-20T20:17:43+00:00",
+        "dateModified": "2023-12-05T17:24:47+08:00",
+        "url": "https://example.com/",
+        "description": "MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。",
+        "image": "https://example.com/icons/apple-touch-icon.png",
+        "author": {
+            "@type": "Person",
+            "description": "Viva La Vida",
+            "email": "reuixiy@gmail.com",
+            "image": "https://example.com/icons/apple-touch-icon.png",
+            "url": "https://io-oi.me/",
+            "name": "reuixiy"
+        },
+        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
+        "name": "Hugo 主题 MemE"
+    }
 </script>
+
+    
+
+<meta name="twitter:card" content="summary" />
+
+<meta name="twitter:site" content="@reuixiy" />
+<meta name="twitter:creator" content="@reuixiy" />
+
+    
+
+
+
+<meta property="og:title" content="Hugo 主题 MemE" />
+<meta property="og:description" content="MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。" />
+<meta property="og:url" content="https://example.com/" />
+<meta property="og:site_name" content="Hugo 主题 MemE" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://example.com/icons/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+
+
+    
+    
+
+    
 </head>
 
-<body class="list" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">Hugo 主题 MemE</a>
+        
+    </div>
 
-</script>
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">文章</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/categories/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon th"><path d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"/></svg><span class="menu-item-name">分类</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">标签</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5l48.8-97.5a18 18 0 0128 0l48.8 97.5 103.4 -34.5a18 18 0 0119.8 19.8l-34.5 103.4l97.5 48.8a18 18 0 010 28l-97.5 48.8 34.5 103.4a18 18 0 01-19.8 19.8l-103.4-34.5-48.8 97.5a18 18 0 01-28 0l-48.8-97.5l-103.4 34.5a18 18 0 01-19.8-19.8l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8-34.5-103.4a18 18 0 0119.8-19.8zM256 128a128 128 0 10.01 0M256 160a96 96 0 10.01 0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412a256 256 0 10154-407a11.5 11.5 0 00-5 20a201.5 201.5 0 01-134 374a11.5 11.5 0 00-15 13"/></svg></a>
+                        </li>
+                    
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
 
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://rong05.github.io/" accesskey="h" title="LEAN (Alt + H)">LEAN</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-                <ul class="lang-switch"><li>|</li>
-                    <li>
-                        <a href="https://rong05.github.io/fr/" title="French"
-                            aria-label=":fr:">🇫🇷</a>
-                    </li>
-                    <li>
-                        <a href="https://rong05.github.io/fa/" title="Fa"
-                            aria-label="Fa">Fa</a>
-                    </li>
-                </ul>
+                    
+                </div>
             </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://rong05.github.io/archives" title="Archive">
-                    <span>Archive</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://rong05.github.io/search/" title="Search">
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://rong05.github.io/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://discord.gg/ahpmTvhVmp" title="Discord">
-                    <span>Discord</span>&nbsp;
-                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                    </svg>
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/adityatelange/hugo-PaperMod/wiki/" title="WiKi">
-                    <span>WiKi</span>&nbsp;
-                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                    </svg>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main"> 
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>[TOC]
-ffplay源码分析 熟悉FFmpeg项目从源码看起，以下是我阅读FFplay的源代码的总结；FFplay是FFmpeg项目提供的播放器示例，它的源代码的量也是不少的，其中很多知识点是我们可以学习和借鉴的。
-总结构图 参照雷神（雷霄骅）的FFplay的总体函数调用结构图，自己总结了一个最新版本的结构，其中还有诸多不足，以后有机会慢慢完善；如下图所示。
-这就不对主要函数分别解析，我来学习一下其中关键性的思想和ffplay的体系结构。
-视频部分 ffplay video的线程模式 ffplay选择了sdl作为显示SDK，以实现跨平台支持；因为使用了SDL，而video的显示也依赖SDL的窗口显示系统，所以先从main函数的SDL初始化看起：
-int main(int argc, char **argv) { ... /* register all codecs, demux and protocols */ #if CONFIG_AVDEVICE avdevice_register_all(); //注册所有解码器 #endif avformat_network_init(); init_opts(); signal(SIGINT, sigterm_handler); /* Interrupt (ANSI). */ signal(SIGTERM, sigterm_handler); /* Termination (ANSI). */ show_banner(argc, argv, options); //打印ffmpag库版本信息，编译时间，编译选项，类库信息等 parse_options(NULL, argc, argv, options, opt_input_file); //解析输入的命令。 ... if (SDL_Init(flags)) { //初始化sdl av_log(NULL, AV_LOG_FATAL, &#34;Could not initialize SDL - %s\n&#34;, SDL_GetError()); av_log(NULL, AV_LOG_FATAL, &#34;(Did you set the DISPLAY variable?...</p>
-  </div>
-  <footer class="entry-footer">21 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to " href="https://rong05.github.io/learn/av-learn/ffplay_learn/"></a>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>rtp协议解析 ​	rtp (实时传输协议)是一个网络传输协议，属于应用层协议
-​	RTP协议详细说明了在互联网上传递音频和视频的标准数据包格式。它一开始被设计为一个多播协议，但后来被用在很多单播应用中。RTP协议常用于流媒体系统（配合RTSP协议），视频会议和一键通（Push to Talk）系统（配合H.323或SIP），使它成为IP电话产业的技术基础。RTP协议和RTP控制协议RTCP一起使用，而且它是创建在UDP协议上的。
-​	rtp被划分在传输层，建立在udp上。同UDP协议一样，为了实现其实时传输功能，RTP也有固定的封装形式。RTP用来为端到端的实时传输提供时间信息和流同步，但并不保证服务质量。服务质量由RTCP来提供。
-Rtp协议封装 ​	rtp传输过程中，根据以太网的MTU一般为1500字节，去除ip协议包头、udp协议包头和PPPoE协议内容，rtp数据分组最大值应为1400字节（这个只是标准值，实际值应该按照MTU大小来决定）。
-​	注意 RTP 本身没有提供任何的机制来确保实时的传输或其他的服务质量保证，而是由低层的服务来完成。它不保证传输或防止乱序传输,它不假定下层网络是否可靠,是否按顺序传送数据包。RTP 包含的序列号允许接受方重构发送方的数据包顺序，但序列号也用来确定一个数据包的正确位置,例如,在视频解码的时候不用按顺序的对数据包进行解码。
-rtp head ​
-​	rtp头结构体的定义中大端和小端模式是有区别的，需要区分对待。
-​	前 12 个字节出现在每个 RTP 包中，仅仅在被混合器插入时，才出现 CSRC 识别符列表。各个域的含义如下所示：
-版本(version)：2 比特，此域定义了 RTP 的版本。此协议定义的版本是 2。(值 1 被 RTP 草案版本使用,值 0 用在最初&#34;vat&#34;语音工具使用的协议中。)
-填充(P)：1 比特，若填料比特被设置,则此包包含一到多个附加在末端的填充比特,填充比特不算作负载的一部分。填充的最后一个字节指明可以忽略多少个填充比特。填充可能用于某些具有固定长度的加密算法，或者用于在底层数据单元中传输多个 RTP 包。
-扩展(X)：1 比特，若设置扩展比特,固定头(仅)后面跟随一个头扩展。
-CSRC 计数(CC)：4 比特，CSRC 计数包含了跟在固定头后面 CSRC 识别符的数目。
-标志(M)：1 比特，标志的解释由具体协议规定。它用来允许在比特流中标记重要的事件,如帧边界。
-负载类型(PT)：7 比特，此域定义了负载的格式，由具体应用决定其解释，协议可以规定负载类型码和负载格式之间一个默认的匹配。其他的负载类型码可以通过非 RTP 方法动态定义。RTP发送端在任意给定时间发出一个单独的 RTP 负载类型；此域不用来复用不同的媒体流。
-序列号(sequence number)：16 比特，每发送一个 RTP 数据包,序列号加 1，接收端可以据此检测丢包和重建包序列。序列号的初始值是随机的(不可预测),以使即便在源本身不加密时(有时包要通过翻译器,它会这样做)，对加密算法泛知的普通文本攻击也会更加困难。
-时间戳(timestamp) ：32 比特，时间戳反映了 RTP 数据包中第一个字节的采样时间。时钟频率依赖于负载数据格式,并在描述文件(profile)中进行描述。也可以通过 RTP 方法对负载格式动态描述。...</p>
-  </div>
-  <footer class="entry-footer">1 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to " href="https://rong05.github.io/learn/av-learn/rtp_protocol/"></a>
-</article>
+        
+    </header>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>camx 高通camx框架 目前高通主流芯片使用camera框架基本都是camx架构。 之前旧的架构叫做mm-camera，camx架构和之前架构代码更加复杂、具有较强的客制化。 我们先来看下camx整体的架构图：
-camx的框架入口为camx包中的camxhal3entry.cpp，代码路径在vendor/qcom/proprietary/camx/下,编译结果是camera.qcom.so Camx通过chxentensionInterface调用到chi-cdk包下的代码，这里面一般是手机厂商自己定制功能的地方，代码目录在vendor/qcom/proprietary/chi-cdk/，编译结果是com.qti.chi.override.so Chi对Camx的操作，需要通过ExtensionModule进行操作，因此，CamX对外提供的接口扩展需要通过ExtensionModule进行，里面一个重要的变量就是g_chiContextOps。 Camx对Chi的操作，是通过HAL3Module接口的m_ChiAppCallbacks进行的，因此chi里面释放的接口，都会在m_ChiAppCallbacks里面体现。 camera数据通路 在camx框架上大致的camera数据流向如下图：
-CSID: 摄像机串行接口解码器模块 IFE：图像前端 IFE_Lite：图像前端 lite BPS：Bayer处理区段 IFE：图像处理引擎 VPU：视频处理单元（编解码器） DPU：显示处理单元 这些都是表示的是芯片内部的一个硬件处理单元，数据在这些单元内部的处理还是比较复杂的，在不同的处理单元里面，会进行一些复杂的算法处理；有个认识，有个基本概念。
-Camx基本组件及概念 usecase 是一种抽象概念；高通的介绍是A set of streams configured by the client combined with a set of static properties specifying the processing of those streams(由客户端配置的一组流，这组流是有着一系列静态属性相结合描述的流。)See createCaptureSession in the Android CameraDevice documentation；
-具体实现是在CHI中通过Usecase类完成的，该类主要负责了其中的业务处理以及资源的管理。 简单说明：按照android 的Camera2 API来说；把预览的surface和录像的surface都设进去，然后去创建session，就是表示我预览和录像都需要拿到camera数据。假设我预览设置的size是1080 x 720，录像是1080p的，那这个1080 x 720预览&#43;1080p录像就是一个usecase（用例）。
-CameraUsecaseBase作为Usecase类的基类提供了一系列通用接口，其中，AdvancedCameraUsecase
-又继承于CameraUsecaseBase，相机中绝大部分场景会通过实例化AdvancedCameraUsecase
-来完成，它包括了几个主要接口：
-create创建AdvancedCameraUsecase实例，并获取相对应的Usecase配置信息 ExecuteCaptureRequest用于下发一次Request ProcessResultCb在创建session时作为回调方法注册到其中，一旦Session数据处理完成的时候便会调用该方法将结果发送到AdvancedCameraUsecase中。 ProcessDriverPartialCaptureResult在创建session时作为回调方法注册到其中，一旦Session中产生了partial meta data的时候，便会调用该方法将其发送至AdvancedCameraUsecase中。 ProcessMessageCb在创建session时作为回调方法注册到其中，一旦Session产生任何事件，便会调用该方法通知到AdvancedCameraUsecase中。 ExecuteFlush用于刷新AdvancedCameraUsecase。 Destroy用于安全销毁AdvancedCameraUsecase。 Feature 代表一个特定的功能。高通上的feature有HDR(高动态范围)、SuperNight（超级夜景）、MFNR（多帧降噪）等等,usecase选择相应的feature，然后关联一组pipeline，上层下发request请求，hal层会根据request去选择对应的feature。（feature2内部代码相对复杂，目前还不太了解，还在学习过程中）...</p>
-  </div>
-  <footer class="entry-footer">1 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to " href="https://rong05.github.io/learn/camera/cmax/camx/"></a>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>rbtree rbtree implementation adapted from linux kernel thus can be used in your own c program(of course in userspace).</p>
-  </div>
-  <footer class="entry-footer">1 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to " href="https://rong05.github.io/learn/data-structure_learn/rbtree-master/readme/"></a>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>红黑树 ​	红黑树（英语：Red–black tree）是一种自平衡二叉查找树,红黑树的结构复杂，但它的操作有着良好的最坏情形运行时间，查找、插入和删除时间复杂度为O(logn)。
-​	其实红黑树也是二叉查找树的一种，二叉查找树在最坏的情形下可能会变成一个链表（当所有 节点按从小到大的顺序依次插入后）；这样树的平衡性被破坏，要提高查询效率需要维持这种平衡和降低树的高度，而其中可性的做法就是用策略在每次修改树的内容之后进行结构调整，使其保持一定的平衡条件；而红黑树就是其中一员。
-优点 ​	红黑树在插入时间、删除时间和查找时间提供最好可能的最坏情形担保，多数用时间敏感或者实时性强的应用中。
-​	红黑树相对于AVL树来说，牺牲了部分平衡性以换取插入和删除操作时少量的旋转操作，整体来说性能要优于AVL树
-性质 ​	红黑树是每个节点都带有颜色属性的二叉查找树，颜色为红色或黑色。还需遵循以下规则：
-节点分为红色或者黑色 根节点比必须是黑色 所有叶子都是黑色（叶子是NIL节点，或者称为空（NULL）叶子） 每个红色节点必须有两个黑色的子节点。（从每个叶子到根的所有路径上不能有两个连续的红色节点。） 从任一节点到其每个叶子的所有简单路径都包含相同数目的黑色节点。 红黑树的图例：
-操作 ​	在红黑树上进行插入操作和删除操作会导致不再符合红黑树的性质，因此需对红黑树进行性质的恢复，但必须做到少量O(logn)的颜色变更,而且不超过三次树旋转（对于插入操作是两次）；由此可以看出红黑树的插入和删除复杂，但是操作时间仍然可以保持O(logn)
-树旋转 ​	树旋转是不影响元素顺序，但会改变树的结构，将一个节点上移、一个节点下移；
-​	左孩子旋转到父节点的位置为右旋；
-​	右孩子旋转到父节点的位置为左旋；
-​	红黑树的左旋代码如下：
-static void __rb_rotate_left(struct rb_node *node, struct rb_root *root) { struct rb_node *right = node-&gt;rb_right;//取出node的右节点 struct rb_node *parent = rb_parent(node);//取出node的父亲节点 if ((node-&gt;rb_right = right-&gt;rb_left))//node的右子节点指向right的左子节点时 rb_set_parent(right-&gt;rb_left, node);//并将right的左子节点与right脱离，right的左子节点的父亲节点指向node right-&gt;rb_left = node;//将right的左子节点重新指向node /**** 到现在就完成了，node右侧树与node脱离，接下来就是将脱离的右侧树重新连接parent *****/ rb_set_parent(right, parent);//将right的父亲节点指向node父亲节点 if (parent)//node非根节点 { if (node == parent-&gt;rb_left)//判断node所在parent的方向并将parent对应的节点重新指向right parent-&gt;rb_left = right; else parent-&gt;rb_right = right; } else //node是根节点，那将right设置为根节点 root-&gt;rb_node = right; rb_set_parent(node, right);//最后将node的父亲节点设置为right } 红黑树的右旋代码如下：...</p>
-  </div>
-  <footer class="entry-footer">4 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to " href="https://rong05.github.io/learn/data-structure_learn/read_black_ree/"></a>
-</article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="prev" href="https://rong05.github.io/">
-      «&nbsp;Prev&nbsp;
-    </a>
-  </nav>
-</footer>
-    </main>
+
+            
+            
     
-<footer class="footer">
-    <span>&copy; 2023 <a href="https://rong05.github.io/">LEAN</a></span>
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
+    
+    
+    
+    
+    
+        <main class="main single" id="main">
+    <div class="main-inner">
+        
+        
+
+        
+        
+            <article class="content post home h-entry">
+                <h2 class="post-title p-name">
+                    <a href="/learn/av-learn/ffplay_learn/" class="summary-title-link u-url"></a>
+                </h2>
+                
+                    
+
+<div class="post-meta">
+    
+    
+        
+        <time datetime="2023-11-28T21:40:44&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2023.11.28</time>
+    
+    
+    
+        
+        
+        
+            
+        
+    
+    
+        
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;20311</span>
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;41&nbsp;分钟</span>
+    
+    
+    
+</div>
+
+                
+                <summary class="summary p-summary">
+                    [TOC] ffplay源码分析 熟悉FFmpeg项目从源码看起，以下是我阅读FFplay的源代……
+                </summary>
+                
+                    <div class="read-more-container">
+                        <a href="/learn/av-learn/ffplay_learn/" class="read-more-link">阅读更多 »</a>
+                    </div>
+                
+            </article>
+        
+            <article class="content post home h-entry">
+                <h2 class="post-title p-name">
+                    <a href="/learn/av-learn/rtp_protocol/" class="summary-title-link u-url"></a>
+                </h2>
+                
+                    
+
+<div class="post-meta">
+    
+    
+        
+        <time datetime="2023-11-28T21:40:44&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2023.11.28</time>
+    
+    
+    
+        
+        
+        
+            
+        
+    
+    
+        
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;2122</span>
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;5&nbsp;分钟</span>
+    
+    
+    
+</div>
+
+                
+                <summary class="summary p-summary">
+                    rtp协议解析 ​ rtp (实时传输协议)是一个网络传输协议，属于应用层协议 ​ RTP协议详细……
+                </summary>
+                
+                    <div class="read-more-container">
+                        <a href="/learn/av-learn/rtp_protocol/" class="read-more-link">阅读更多 »</a>
+                    </div>
+                
+            </article>
+        
+            <article class="content post home h-entry">
+                <h2 class="post-title p-name">
+                    <a href="/learn/camera/cmax/camx/" class="summary-title-link u-url"></a>
+                </h2>
+                
+                    
+
+<div class="post-meta">
+    
+    
+        
+        <time datetime="2023-11-28T21:40:44&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2023.11.28</time>
+    
+    
+    
+        
+        
+        
+            
+        
+    
+    
+        
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;3060</span>
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;7&nbsp;分钟</span>
+    
+    
+    
+</div>
+
+                
+                <summary class="summary p-summary">
+                    camx 高通camx框架 目前高通主流芯片使用camera框架基本都是camx架构。 之前旧的……
+                </summary>
+                
+                    <div class="read-more-container">
+                        <a href="/learn/camera/cmax/camx/" class="read-more-link">阅读更多 »</a>
+                    </div>
+                
+            </article>
+        
+            <article class="content post home h-entry">
+                <h2 class="post-title p-name">
+                    <a href="/learn/data-structure_learn/rbtree-master/readme/" class="summary-title-link u-url"></a>
+                </h2>
+                
+                    
+
+<div class="post-meta">
+    
+    
+        
+        <time datetime="2023-11-28T21:40:44&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2023.11.28</time>
+    
+    
+    
+        
+        
+        
+            
+        
+    
+    
+        
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;19</span>
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;1&nbsp;分钟</span>
+    
+    
+    
+</div>
+
+                
+                <summary class="summary p-summary">
+                    rbtree rbtree implementation adapted from linux kernel thus can be used in your own c program(of course in userspace).
+                </summary>
+                
+            </article>
+        
+            <article class="content post home h-entry">
+                <h2 class="post-title p-name">
+                    <a href="/learn/data-structure_learn/read_black_ree/" class="summary-title-link u-url"></a>
+                </h2>
+                
+                    
+
+<div class="post-meta">
+    
+    
+        
+        <time datetime="2023-11-28T21:40:44&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2023.11.28</time>
+    
+    
+    
+        
+        
+        
+            
+        
+    
+    
+        
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;6052</span>
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;13&nbsp;分钟</span>
+    
+    
+    
+</div>
+
+                
+                <summary class="summary p-summary">
+                    红黑树 ​ 红黑树（英语：Red–black tree）是一种自平衡二叉查找树,红黑树的结……
+                </summary>
+                
+                    <div class="read-more-container">
+                        <a href="/learn/data-structure_learn/read_black_ree/" class="read-more-link">阅读更多 »</a>
+                    </div>
+                
+            </article>
+        
+        
+            <ul class="pagination">
+                
+                    <li class="pagination-prev">
+                        <a href="/" rel="prev">&lt; 上一页</a>
+                    </li>
+                
+                
+            </ul>
+        
+    </div>
+</main>
+
+    
+    
+    
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;1969–2023&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;reuixiy</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
+
+            
+    
+        <ul class="socials"><li class="socials-item">
+                    <a href="/rss.xml" target="_blank" rel="external noopener" title="RSS"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon social-icon"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg></a>
+                </li><li class="socials-item">
+                    <a href="mailto:reuixiy@gmail.com" target="_blank" rel="external noopener" title="Email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon social-icon"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg></a>
+                </li><li class="socials-item">
+                    <a href="https://github.com/reuixiy" target="_blank" rel="external noopener" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon social-icon"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                </li><li class="socials-item">
+                    <a href="https://twitter.com/reuixiy" target="_blank" rel="external noopener" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon social-icon"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
+                </li><li class="socials-item">
+                    <a href="https://t.me/yixiuer" target="_blank" rel="external noopener" title="Telegram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon social-icon"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"/></svg></a>
+                </li></ul>
+    
+
+
+
+            
+        </div>
+    </footer>
+
+
+        </div>
+        
+
+        
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
 
 <script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
+    let imgNodes = document.querySelectorAll('div.post-body img');
+    imgNodes = Array.from(imgNodes).filter(node => node.parentNode.tagName !== "A");
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
+    mediumZoom(imgNodes, {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
     })
-
 </script>
-</body>
 
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+
+
+    </body>
 </html>

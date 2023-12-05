@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <sitemap>
-    <loc>https://rong05.github.io/en/sitemap.xml</loc>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>https://rong05.github.io/fr/sitemap.xml</loc>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>https://rong05.github.io/fa/sitemap.xml</loc>
-    
-  </sitemap>
-  
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://example.com/learn/android/android_binder/</loc>
+    <lastmod>2023-12-05T17:24:47+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/learn/android/android_selinux/</loc>
+    <lastmod>2023-11-28T21:40:44+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/learn/android/binder_driver/</loc>
+    <lastmod>2023-11-28T21:40:44+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/learn/android/mediacodec_learn/</loc>
+    <lastmod>2023-11-28T21:40:44+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/learn/android/mediacodec_source_learn/</loc>
+    <lastmod>2023-11-28T21:40:44+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/learn/av-learn/ffplay_learn/</loc>
+    <lastmod>2023-11-28T21:40:44+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/learn/av-learn/rtp_protocol/</loc>
+    <lastmod>2023-11-28T21:40:44+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/learn/camera/cmax/camx/</loc>
+    <lastmod>2023-11-28T21:40:44+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/learn/data-structure_learn/rbtree-master/readme/</loc>
+    <lastmod>2023-11-28T21:40:44+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/learn/data-structure_learn/read_black_ree/</loc>
+    <lastmod>2023-11-28T21:40:44+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/categories/</loc>
+  </url><url>
+    <loc>https://example.com/</loc>
+    <lastmod>2023-12-05T17:24:47+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/learn/</loc>
+    <lastmod>2023-12-05T17:24:47+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/</loc>
+  </url>
+</urlset>
