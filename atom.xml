@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">菜鸟历程</title>
     <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
-    <updated>2023-12-06T16:23:22&#43;08:00</updated>
+    <updated>2023-12-06T17:06:02&#43;08:00</updated>
     <id>https://rong05.github.io/</id>
     <link rel="alternate" type="text/html" href="https://rong05.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://rong05.github.io/atom.xml" />
@@ -24,7 +24,7 @@
             <published>2023-12-06T10:36:27&#43;08:00</published>
             <author>
                     <name>三余无梦生</name>
-                    <uri>https://io-oi.me/</uri>
+                    <uri>https://rong05.github.io/</uri>
                     <email>rong171205@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">SELinux policy介绍 ​ SELinux中，每种东西都会被赋予一个安全属性，就是SCont……</summary>
@@ -279,7 +279,7 @@ init_daemon_domain(cookoosvc)
             <published>2023-12-06T10:36:27&#43;08:00</published>
             <author>
                     <name>三余无梦生</name>
-                    <uri>https://io-oi.me/</uri>
+                    <uri>https://rong05.github.io/</uri>
                     <email>rong171205@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">binder驱动的初始化 在binder.c中有以下一行代码； 1 device_initcall(binder_init); 在Linux内核的启……</summary>
@@ -2235,7 +2235,7 @@ init_daemon_domain(cookoosvc)
             <published>2023-12-06T10:36:27&#43;08:00</published>
             <author>
                     <name>三余无梦生</name>
-                    <uri>https://io-oi.me/</uri>
+                    <uri>https://rong05.github.io/</uri>
                     <email>rong171205@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">基于Android 11的源码剖析，笔记记录binder通讯原理的实现过程； 根据网络上……</summary>
@@ -4281,7 +4281,7 @@ init_daemon_domain(cookoosvc)
             <published>2023-12-06T10:36:27&#43;08:00</published>
             <author>
                     <name>三余无梦生</name>
-                    <uri>https://io-oi.me/</uri>
+                    <uri>https://rong05.github.io/</uri>
                     <email>rong171205@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">熟悉FFmpeg项目从源码看起，以下是我阅读FFplay的源代码的总结；FFplay……</summary>
@@ -7677,7 +7677,7 @@ init_daemon_domain(cookoosvc)
             <published>2023-12-06T10:36:27&#43;08:00</published>
             <author>
                     <name>三余无梦生</name>
-                    <uri>https://io-oi.me/</uri>
+                    <uri>https://rong05.github.io/</uri>
                     <email>rong171205@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">官方API：https://developer.android.google.cn/……</summary>
@@ -8004,7 +8004,7 @@ init_daemon_domain(cookoosvc)
             <published>2023-12-06T10:36:27&#43;08:00</published>
             <author>
                     <name>三余无梦生</name>
-                    <uri>https://io-oi.me/</uri>
+                    <uri>https://rong05.github.io/</uri>
                     <email>rong171205@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在另一个篇文章中已经介绍了MediaCodec的API，详情请看MediaCodec……</summary>
@@ -8400,7 +8400,7 @@ init_daemon_domain(cookoosvc)
             <published>2023-12-06T10:36:27&#43;08:00</published>
             <author>
                     <name>三余无梦生</name>
-                    <uri>https://io-oi.me/</uri>
+                    <uri>https://rong05.github.io/</uri>
                     <email>rong171205@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">​ rtp (实时传输协议)是一个网络传输协议，属于应用层协议 ​ RTP协议详细说明了在互联网……</summary>
@@ -8500,7 +8500,7 @@ init_daemon_domain(cookoosvc)
             <published>2023-12-06T10:36:27&#43;08:00</published>
             <author>
                     <name>三余无梦生</name>
-                    <uri>https://io-oi.me/</uri>
+                    <uri>https://rong05.github.io/</uri>
                     <email>rong171205@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">高通camx框架 目前高通主流芯片使用camera框架基本都是camx架构。 之前旧的架……</summary>
@@ -8617,7 +8617,7 @@ init_daemon_domain(cookoosvc)
             <published>2023-12-06T10:36:27&#43;08:00</published>
             <author>
                     <name>三余无梦生</name>
-                    <uri>https://io-oi.me/</uri>
+                    <uri>https://rong05.github.io/</uri>
                     <email>rong171205@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">红黑树（英语：Red–black tree）是一种自平衡二叉查找树,红黑树的结构复杂，……</summary>
