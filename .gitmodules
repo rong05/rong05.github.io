@@ -10,3 +10,4 @@
 [submodule "content/posts"]
 	path = content/posts
 	url = git@github.com:rong05/learn.git
+	branch = hugo-code
